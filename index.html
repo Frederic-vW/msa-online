@@ -22,8 +22,7 @@
     <h1>Statistical analysis of EEG microstate sequences</h1>
 
     <div>
-    <h2 style="background-color: #e7f3fe; color: black; cursor: pointer; padding: 18px; border-left: 12px solid #2196F3; 
-              text-align: left; outline: none; font-size: 15px; max-width: 800px;">
+    <class="h2">
     Data input
     </h2>
     </div>
@@ -97,8 +96,7 @@
     </p>
 
     <div>
-    <h2 style="background-color: #e7f3fe; color: black; cursor: pointer; padding: 18px; border-left: 12px solid #2196F3; 
-                text-align: left; outline: none; font-size: 15px; max-width: 800px;">
+    <class="h2">
     Analysis
     </h2>
     </div>
@@ -114,30 +112,27 @@
 
     <!-- light gray: #D3D3D3 dark gray: #A9A9A9 charcoal: #36454F-->
     <p>
-    <div id="output-dist" style="background-color: #D3D3D3; color: black; cursor: pointer; padding: 12px; text-align: left; 
-                                 outline: none; font-size: 15px; max-width: 800px;">
+    <div class="output" id="output-dist">
     <strong>Distribution: </strong>
     </div> 
     </p>
 
     <p>
-    <div id="div1"><strong>Transition matrix: </strong></div> 
+    <div class="output" id="div1"><strong>Transition matrix: </strong></div> 
     </p>
 
     <p>
-    <div id="output-markov0" style="background-color: #D3D3D3; color: black; cursor: pointer; padding: 12px; text-align: left; 
-                                 outline: none; font-size: 15px; max-width: 800px;">
+    <div class="output" id="output-markov0">
     <strong>Markov-0 test: </strong>
     </div> 
     </p>
 
     <p>
-    <div id="output-markov1"><strong>Markov-1 test: </strong></div> 
+    <div class="output" id="output-markov1"><strong>Markov-1 test: </strong></div> 
     </p>
 
     <p>
-    <div id="output-entropy" style="background-color: #D3D3D3; color: black; cursor: pointer; padding: 12px; text-align: left; 
-                                 outline: none; font-size: 15px; max-width: 800px;">
+    <div class="output" id="output-entropy">
     <strong>Shannon entropy: </strong>
     </div> 
     </p>
@@ -147,7 +142,7 @@
     -->
 
     <p>
-    <div>
+    <div class="output">
     <strong>Entropy rate: </strong>
     $$ h_X = \lim_{k \rightarrow \infty} H(X_{n+1} \mid \mathbf{X}_n^{(k)}) $$
     <!--
@@ -158,22 +153,22 @@
     -->
 
     </div>
-    <div id="output-entropy-rate"> </div> 
+    <div class="output" id="output-entropy-rate"> </div> 
     </p>
 
     <p>
-    <div>
+    <div class="output">
     <strong>Active information storage: </strong>
     $ a_X\left(n,k\right) = I\left(X_{n+1} ; \mathbf{X}_n^{(k)}\right) $
     $ a_X(n,k) = I(X_{n+1} ; \mathbf{X}_n^{(k)}) $
     <!--
     -->
     </div> 
-    <div id="output-ais"> </div>
+    <div class="output" id="output-ais"> </div>
     </p>
 
     <p>
-    <div>
+    <div class="output">
     <strong>Partial autoinformation function: </strong>
     $$ \pi_X\left(n,k\right) = I\left(X_{n+k} ; X_n \mid X_{n+k-1} \ldots X_{n+1}\right) $$
     <!--
