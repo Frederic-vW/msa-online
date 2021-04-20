@@ -33,7 +33,7 @@ function parseInput(){
     document.getElementById("output-sequence-mapped").innerHTML = 
     "<strong>Mapped sequence: </strong>" + x.slice(0,30).join(', ') + "...";
     
-    //plotData(x)
+    plotData(x)
 }
 
 function log2(x) {
@@ -57,7 +57,7 @@ function analyze(){
     // autoinformation function (AIF)
     var lmax = 100;
     //var mi = aif(x, ns, lmax);
-    //plotAif(aif);
+    plotAif(aif);
     var mip = paif(x,ns,kmax);
     
     //var y = surrogate_mc(p_hat, T_hat, ns, x.length);
