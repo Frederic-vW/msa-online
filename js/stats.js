@@ -56,7 +56,7 @@ function analyze(){
     var h2 = ais(x,ns,kmax);
     // autoinformation function (AIF)
     var lmax = 100;
-    //var mi = aif(x, ns, lmax);
+    var mi = aif(x, ns, lmax);
     plotAif(aif);
     var mip = paif(x,ns,kmax);
     
