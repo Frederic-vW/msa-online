@@ -28,7 +28,8 @@
     </h2>
     </div>
 
-    Enter your microstate sequence here. Click one of the buttons to either copy and paste your sequence in a text box, or to upload the data from the file.
+    Enter your microstate sequence here. Click one of the buttons to either copy and paste your sequence in a text box, 
+    or to upload the data from the file.
 
     <div id="btns">
     <input hidden type="text" id="input-option"> </input> 
@@ -113,8 +114,8 @@
 
     <!-- light gray: #D3D3D3 dark gray: #A9A9A9 charcoal: #36454F-->
     <p>
-    <div id="output-dist" style="background-color: #D3D3D3; color: black; cursor: pointer; padding: 18px; border-left: 12px solid #36454F; 
-                                 text-align: left; outline: none; font-size: 15px; max-width: 800px;">
+    <div id="output-dist" style="background-color: #D3D3D3; color: black; cursor: pointer; padding: 12px; text-align: left; 
+                                 outline: none; font-size: 15px; max-width: 800px;">
     <strong>Distribution: </strong>
     </div> 
     </p>
@@ -124,7 +125,10 @@
     </p>
 
     <p>
-    <div id="output-markov0"><strong>Markov-0 test: </strong></div> 
+    <div id="output-markov0" style="background-color: #D3D3D3; color: black; cursor: pointer; padding: 12px; text-align: left; 
+                                 outline: none; font-size: 15px; max-width: 800px;">
+    <strong>Markov-0 test: </strong>
+    </div> 
     </p>
 
     <p>
@@ -132,15 +136,15 @@
     </p>
 
     <p>
-    <div>
-    <strong>Shannon entropy: </strong> 
+    <div id="output-entropy" style="background-color: #D3D3D3; color: black; cursor: pointer; padding: 12px; text-align: left; 
+                                 outline: none; font-size: 15px; max-width: 800px;">
+    <strong>Shannon entropy: </strong>
+    </div> 
+    </p>
     <!--
     $ H\left(X\right) = -\sum_i P\left(X_i\right) \log P\left(X_i\right) $
     $ H(X) = -\sum_i P(X_i) \log P(X_i) $
     -->
-    </div> 
-    <div id="output-entropy"> </div> 
-    </p>
 
     <p>
     <div>
