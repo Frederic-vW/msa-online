@@ -22,3 +22,25 @@ body {
   color: #ffffff;
 }
 
+.h2 {
+  background-color: #e7f3fe; 
+  color: black; 
+  cursor: pointer; 
+  padding: 18px; 
+  border-left: 12px solid #2196F3; 
+  text-align: left; 
+  outline: none; 
+  font-size: 15px; 
+  max-width: 800px;
+}
+
+.output {
+  background-color: #D3D3D3; 
+  color: black; 
+  cursor: pointer; 
+  padding: 12px; 
+  text-align: left; 
+  outline: none; 
+  font-size: 15px; 
+  max-width: 800px;
+}
