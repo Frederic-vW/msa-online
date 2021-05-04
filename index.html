@@ -21,10 +21,9 @@
     
     <h1>Statistical analysis of EEG microstate sequences</h1>
 
-    <div class="h2">
-    Data input
-    </div>
-
+    <!-- <div class="h2"></div> -->
+    <h2>Data input</h2>
+    
     Enter your microstate sequence here. Click one of the buttons to either copy and paste your sequence in a text box, 
     or to upload the data from the file.
 
@@ -93,9 +92,8 @@
     <div id="output-sequence-mapped"><strong>Mapped sequence: </strong></div> 
     </p>
 
-    <div class="h2">
-    Analysis
-    </div>
+    <!-- <div class="h2"></div> -->
+    <div class="output"><strong>Analysis</strong></div>
 
     <div>
     <button type="button" id="btn-analyze" onclick="analyze();">Analyze</button>
@@ -108,29 +106,34 @@
 
     <!-- light gray: #D3D3D3 dark gray: #A9A9A9 charcoal: #36454F-->
     <p>
-    <div class="output" id="output-dist">
+    <div class="output">
     <strong>Distribution: </strong>
     </div> 
+    <div id="output-dist"></div>
     </p>
 
     <p>
-    <div class="output" id="div1"><strong>Transition matrix: </strong></div> 
+    <div class="output"><strong>Transition matrix: </strong></div> 
+    <div id="div1"></div>
     </p>
 
     <p>
-    <div class="output" id="output-markov0">
+    <div class="output">
     <strong>Markov-0 test: </strong>
-    </div> 
+    </div>
+    <div id="output-markov0"></div> 
     </p>
 
     <p>
-    <div class="output" id="output-markov1"><strong>Markov-1 test: </strong></div> 
+    <div class="output"><strong>Markov-1 test: </strong></div> 
+    <div id="output-markov1"></div>
     </p>
 
     <p>
-    <div class="output" id="output-entropy">
+    <div class="output">
     <strong>Shannon entropy: </strong>
-    </div> 
+    </div>
+    <div id="output-entropy"></div>
     </p>
     <!--
     $ H\left(X\right) = -\sum_i P\left(X_i\right) \log P\left(X_i\right) $
