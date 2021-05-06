@@ -65,12 +65,12 @@ function analyze(){
     var alpha = 0.05;
     
     var pval0 = testMarkov0(x, ns, alpha);
-    var txtMarkov0 = "difference between Markov-0 and Markov-1" + 
+    var txtMarkov0 = "Difference between Markov-0 and Markov-1" + 
     ((pval0 < alpha) ? " is " : " is not ") + "significant" + 
     " (p=" + pval0.toFixed(4) + ")";
     
     var pval1 = testMarkov1(x, ns, alpha);
-    var txtMarkov1 = "difference between Markov-1 and Markov-2" + 
+    var txtMarkov1 = "Difference between Markov-1 and Markov-2" + 
     ((pval1 < alpha) ? " is " : " is not ") + "significant" + 
     " (p=" + pval1.toFixed(4) + ")";
     
@@ -395,7 +395,7 @@ function testMarkov1(x, ns, alpha) {
 }
 
 function drawTable(T) {
-    //document.getElementById('div1').innerHTML = "";
+    document.getElementById('div1').innerHTML = "";
     nr = T.length;
     nc = T[0].length;
     var div1 = document.getElementById('div1');
@@ -424,14 +424,15 @@ function plotData(z){
 }
 
 function plotAif(z){
+    // y = [...Array(z.length).keys()].map(function(x) { return x * dt; });
     var trace1 = {
         x: [...Array(z.length).keys()],
         y: z,
         type: 'scatter'
     };
     var layout = {
-        xaxis: {type: 'lin', autorange: true},
-        yaxis: {type: 'log', autorange: true}
+        xaxis: {type: 'lin', autorange: true, title: 'lag', titlefont: {family: 'Arial, sans-serif', size: 18, color: 'black'}},
+        yaxis: {type: 'log', autorange: true, title: 'AIF [bits]', titlefont: {family: 'Arial, sans-serif', size: 18, color: 'black'}}
     };
     var data = [trace1];
     Plotly.newPlot('plot', data, layout);
