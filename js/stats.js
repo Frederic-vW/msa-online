@@ -435,8 +435,21 @@ function plotData(z){
 
 function plotAif(z){
     // y = [...Array(z.length).keys()].map(function(x) { return x * dt; });
+    var sr = document.getElementById("sample-rate").value;
+    console.log("sr: ", sr)
+    var dt = null;
+    var xlabel = "";
+    var lags = [];
+    try {
+	dt = 1000.0/parseFloat(sr)
+	xlabel = "lag [ms]"
+	lags = [...Array(z.length).keys()].map(function(x) { return x * dt; })
+    } catch {
+	xlabel = "lag [samples]"
+	lags = [...Array(z.length).keys()]
+    }
     var trace1 = {
-        x: [...Array(z.length).keys()],
+        x: lags,
         y: z,
         type: 'scatter'
     };
