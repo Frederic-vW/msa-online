@@ -320,7 +320,8 @@ function make_surrogate() {
     let p = getP(x, ns);
     let T = getT(x, ns);
     let n = x.length;
-    x = surrogate_mc(p, T, ns, n)	
+    x = surrogate_mc(p, T, ns, n);
+    document.getElementById("surrogate-notify").innerHTML = "You are analyzing a Markov surrogate, not the original sequence!"
 }
 
 function testMarkov0(x, ns, alpha) {
