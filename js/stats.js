@@ -434,9 +434,7 @@ function plotData(z){
 }
 
 function plotAif(z){
-    // y = [...Array(z.length).keys()].map(function(x) { return x * dt; });
     var sr = document.getElementById("sample-rate").value;
-    console.log("sr: ", sr)
     var dt = null;
     var xlabel = "";
     var lags = [];
@@ -449,8 +447,6 @@ function plotAif(z){
 	    xlabel = "lag [samples]"
 	    lags = [...Array(z.length).keys()]
 	}
-	console.log("dt: ", dt)
-	console.log("lags: ", lags)
     } catch {
 	xlabel = "lag [samples]"
 	lags = [...Array(z.length).keys()]
@@ -468,6 +464,7 @@ function plotAif(z){
     Plotly.newPlot('plot', data, layout);
 }
 
+// auxiliary functions to compute chi-square statistics
 // adapted from: https://www.math.ucla.edu/~tom/distributions/chisq.html
 
 function LogGamma(Z) {
