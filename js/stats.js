@@ -442,8 +442,10 @@ function plotAif(z){
     var lags = [];
     try {
 	dt = 1000.0/parseFloat(sr)
+	console.log("dt: ", dt)
 	xlabel = "lag [ms]"
 	lags = [...Array(z.length).keys()].map(function(x) { return x * dt; })
+	console.log("lags: ", lags)
     } catch {
 	xlabel = "lag [samples]"
 	lags = [...Array(z.length).keys()]
@@ -454,7 +456,7 @@ function plotAif(z){
         type: 'scatter'
     };
     var layout = {
-        xaxis: {type: 'lin', autorange: true, title: 'lag', titlefont: {family: 'Arial, sans-serif', size: 18, color: 'black'}},
+        xaxis: {type: 'lin', autorange: true, title: xlabel, titlefont: {family: 'Arial, sans-serif', size: 18, color: 'black'}},
         yaxis: {type: 'log', autorange: true, title: 'AIF [bits]', titlefont: {family: 'Arial, sans-serif', size: 18, color: 'black'}}
     };
     var data = [trace1];
