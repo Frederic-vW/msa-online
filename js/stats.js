@@ -316,6 +316,13 @@ function surrogate_mc(p, T, ns, n) {
     return Y
 }
 
+function make_surrogate() {
+    let p = getP(x, ns);
+    let T = getT(x, ns);
+    let n = x.length;
+    x = surrogate_mc(p, T, ns, n)	
+}
+
 function testMarkov0(x, ns, alpha) {
     /* Test zero-order Markovianity of symbolic sequence x with ns symbols
     Null hypothesis: zero-order MC (iid) <=>
