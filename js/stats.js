@@ -57,7 +57,7 @@ function analyze(){
     // autoinformation function (AIF)
     var lmax = 100;
     var mi = aif(x, ns, lmax);
-    plotAif(mi);
+    //plotAif(mi);
     var mip = paif(x,ns,kmax);
     
     //var y = surrogate_mc(p_hat, T_hat, ns, x.length);
@@ -105,6 +105,8 @@ function analyze(){
     document.getElementById("output-paif").innerHTML = 
     "PAIF for k = 1..." + kmax + ": " +
     mip.map(a => a.toFixed(3)).join(', ');
+    
+    plotAif(mi);
 }
 
 function getP(y,n){
