@@ -22,7 +22,7 @@ function parseInput(){
     let raw_arr = Array.prototype.map.call(raw, a => a);
     
     document.getElementById("output-sequence-in").innerHTML = 
-    "<strong>Parsed sequence: </strong>"+raw_arr.slice(0,30).join(', ')+"...";
+    "<strong>Input sequence: </strong>"+raw_arr.slice(0,30).join(', ')+"...";
     
     document.getElementById("output-symbols-parsed").innerHTML = 
     "<strong>Parsed symbols: </strong>" + S0.join(', ');
