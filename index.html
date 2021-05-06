@@ -17,78 +17,96 @@
       <a href="https://research.unsw.edu.au/people/dr-frederic-von-wegner" target="_blank">UNSW</a>
     </div>
     
-    <h1>Statistical analysis of EEG microstate sequences</h1>
+    <h1>
+      Statistical analysis of EEG microstate sequences
+    </h1>
 
     <!-- <div class="h2"></div> -->
-    <h2>Data input</h2>
+    <h2>
+      Data input
+    </h2>
     
     Enter your microstate sequence here. Click one of the buttons to either copy and paste your sequence in a text box, 
     or to upload the data from the file.
 
     <div id="btns">
-    <input hidden type="text" id="input-option"> </input> 
-    <!-- style="padding: 10px; background-color: #34568B;" -->
+      <input hidden type="text" id="input-option">
+      </input> 
+      <!-- style="padding: 10px; background-color: #34568B;" -->
+
+      <p>
+        <div style="display: inline-block;"> Choose your input option: </div>
+      </p>
+
+      <div id="div_paste" style="display: inline-block;">
+        <button type="button" id="btn-paste" onclick=setInput(this)>
+          Copy & paste
+        </button>
+      </div>
+
+      <div id="div_upload" style="display: inline-block;">
+        <button type="button" id="btn-upload" onclick=setInput(this)>
+          From file
+        </button>
+      </div>
+
+    </div>
 
     <p>
-    <div style="display: inline-block;"> Choose your input option: </div>
+      <div id="copypaste" style="display: none;">
+        Paste your data into the box: 
+        <input type="text" id="paste-input" placeholder=">>> data here <<<">
+      </div>
     </p>
 
-    <div id="div_paste" style="display: inline-block;">
-    <button type="button" id="btn-paste" onclick=setInput(this)>
-    Copy & paste
-    </button>
-    </div>
-
-    <div id="div_upload" style="display: inline-block;">
-    <button type="button" id="btn-upload" onclick=setInput(this)>
-    From file
-    </button>
-    </div>
-
-    </div>
-
     <p>
-    <div id="copypaste" style="display: none;">
-    Paste your data into the box: 
-    <input type="text" id="paste-input" placeholder=">>> data here <<<">
-    </div>
-    </p>
-
-    <p>
-    <div id="upload" style="display: none;">
-    Upload your data from file: 
-    <input type="file" id="file-input"> 
-
-    <input hidden type=text id="input_data"> </input>
-    <!--
-    <textarea cols="30" rows="10" id="inputText"
-    placeholder="text will appear here"> 
-    </textarea> 
-    -->
-    </div>
-    </div>
+      <div id="upload" style="display: none;">
+        Upload your data from file: 
+        <input type="file" id="file-input"> 
+        <input hidden type=text id="input_data"> </input>
+        <!--
+        <textarea cols="30" rows="10" id="inputText"
+        placeholder="text will appear here"> 
+        </textarea> 
+        -->
+      </div>
+    <!-- </div> -->
     </p>
 
     <div>
-    <button type="button" id="btn-parse" onclick="parseInput();">Parse input
-    </button>
-    <input hidden type="text" id="parsed_input"> </div>
+      <button type="button" id="btn-parse" onclick="parseInput();">
+        Parse input
+      </button>
+      <input hidden type="text" id="parsed_input">
     </div>
+    <!-- </div> -->
 
     <p>
-    <div id="output-sequence-in"><strong>Parsed sequence: </strong></div>
+      <div id="output-sequence-in">
+        <strong>Input sequence: </strong>
+      </div>
     </p>
+    
     <p>
-    <div id="output-symbols-parsed"><strong>Parsed symbols: </strong></div> 
+      <div id="output-symbols-parsed">
+        <strong>Parsed symbols: </strong>
+      </div> 
     </p>
+    
     <p>
-    In case your symbols are not numeric, e.g. A, B, C, D, they will be mapped to integer values.
+      In case your symbols are not numeric, e.g. A, B, C, D, they will be mapped to integer values.
     </p>
+    
     <p>
-    <div id="output-symbols-mapped"><strong>Mapped symbols: </strong></div>
+      <div id="output-symbols-mapped">
+        <strong>Mapped symbols: </strong>
+      </div>
     </p>
+    
     <p>
-    <div id="output-sequence-mapped"><strong>Mapped sequence: </strong></div> 
+      <div id="output-sequence-mapped">
+        <strong>Mapped sequence: </strong>
+      </div> 
     </p>
 
     <!-- <div class="h2"></div> -->
@@ -96,21 +114,25 @@
     <hr>
     
     <p>
-    <div>
-    <button class="button" type="button" id="btn-surrogate" onclick="make_surrogate();">Make Markov surrogate</button>
-    <!-- <input hidden type=> -->
-    </div>
-    If you hit this button, a first-order Markov surrogate will be analyzed, NOT the sequence you provided as input.
+      <div>
+        <button class="button" type="button" id="btn-surrogate" onclick="make_surrogate();">
+          Make Markov surrogate
+        </button>
+        <!-- <input hidden type=> -->
+      </div>
+      If you hit this button, a first-order Markov surrogate will be analyzed, NOT the sequence you provided as input.
     </p>
     <div id="surrogate-notify" style="font: italic small-caps bold 24px/30px Arial, sans-serif; background-color: yellow; margin: auto;"></div>
 
     <!-- <hr> -->
 
     <p>
-    <div>
-    <button class="button" type="button" id="btn-analyze" onclick="analyze();">Analyze!</button>
-    <!-- <input hidden type=> -->
-    </div>
+      <div>
+        <button class="button" type="button" style="border-radius: 8px;" id="btn-analyze" onclick="analyze();">
+          <span style="font-variant: small-caps;">Analyze!</span>
+        </button>
+        <!-- <input hidden type=> -->
+      </div>
     </p>
 
     <!-- <center> </center> -->
@@ -119,44 +141,53 @@
 
     <!-- light gray: #D3D3D3 dark gray: #A9A9A9 charcoal: #36454F-->
     <p>
-    <div class="output">
-    <strong>Distribution: </strong>
-    </div>
+      <div class="output">
+        <strong>Distribution: </strong>
+      </div>
     </p>
+    
     <p>
-    <div id="output-dist"></div>
-    </p>
-
-    <p>
-    <div class="output"><strong>Transition matrix: </strong></div> 
-    </p>
-    <p>
-    <div id="div1"></div>
+      <div id="output-dist"></div>
     </p>
 
     <p>
-    <div class="output">
-    <strong>Markov-0 test: </strong>
-    </div>
+      <div class="output">
+        <strong>Transition matrix: </strong>
+      </div> 
     </p>
+    
     <p>
-    <div id="output-markov0"></div> 
-    </p>
-
-    <p>
-    <div class="output"><strong>Markov-1 test: </strong></div> 
-    </p>
-    <p>
-    <div id="output-markov1"></div>
+      <div id="div1"></div>
     </p>
 
     <p>
-    <div class="output">
-    <strong>Shannon entropy: </strong>
-    </div>
+      <div class="output">
+        <strong>Markov-0 test: </strong>
+      </div>
     </p>
+    
     <p>
-    <div id="output-entropy"></div>
+      <div id="output-markov0"></div> 
+    </p>
+
+    <p>
+      <div class="output">
+        <strong>Markov-1 test: </strong>
+      </div> 
+    </p>
+    
+    <p>
+      <div id="output-markov1"></div>
+    </p>
+
+    <p>
+      <div class="output">
+        <strong>Shannon entropy: </strong>
+      </div>
+    </p>
+    
+    <p>
+      <div id="output-entropy"></div>
     </p>
     <!--
     $ H\left(X\right) = -\sum_i P\left(X_i\right) \log P\left(X_i\right) $
@@ -164,9 +195,9 @@
     -->
 
     <p>
-    <div class="output">
-    <strong>Entropy rate: </strong>
-    </div>
+      <div class="output">
+        <strong>Entropy rate: </strong>
+      </div>
     <p>
     <!--
     $$ h_X = \lim_{k \rightarrow \infty} H(X_{n+1} \mid \mathbf{X}_n^{(k)}) $$
@@ -176,59 +207,61 @@
     $ h_X = H(X_{n+1} \mid \mathbf{X}_n^{(k)}) $
     -->
     <p>
-    <div id="output-entropy-rate"> </div> 
+      <div id="output-entropy-rate"> </div> 
     </p>
 
     <p>
-    <div class="output">
-    <strong>Active information storage: </strong>
-    <!--
-    $ a_X\left(n,k\right) = I\left(X_{n+1} ; \mathbf{X}_n^{(k)}\right) $
-    $ a_X(n,k) = I(X_{n+1} ; \mathbf{X}_n^{(k)}) $
-    -->
-    </div>
+      <div class="output">
+        <strong>Active information storage: </strong>
+        <!--
+        $ a_X\left(n,k\right) = I\left(X_{n+1} ; \mathbf{X}_n^{(k)}\right) $
+        $ a_X(n,k) = I(X_{n+1} ; \mathbf{X}_n^{(k)}) $
+        -->
+      </div>
     </p>
+    
     <p>
-    <div id="output-ais"> </div>
+      <div id="output-ais"> </div>
     </p>
 
     <p>
-    <div class="output">
-    <strong>Partial autoinformation function: </strong>
-    <!--
-    $$ \pi_X\left(n,k\right) = I\left(X_{n+k} ; X_n \mid X_{n+k-1} \ldots X_{n+1}\right) $$
-    -->
-    <!--
-    $ \pi_X\left(n,k\right) = I\left(X_{n+k} ; X_n \mid \mathbf{X}_{n+k-1}^{(k-1)}\right)$
-    $ \pi_X(n,k) = I(X_{n+k} ; X_n \mid X_{n+k-1} \ldots X_{n+1}) $
-    -->
+      <div class="output">
+        <strong>Partial autoinformation function: </strong>
+        <!--
+        $$ \pi_X\left(n,k\right) = I\left(X_{n+k} ; X_n \mid X_{n+k-1} \ldots X_{n+1}\right) $$
+        -->
+        <!--
+        $ \pi_X\left(n,k\right) = I\left(X_{n+k} ; X_n \mid \mathbf{X}_{n+k-1}^{(k-1)}\right)$
+        $ \pi_X(n,k) = I(X_{n+k} ; X_n \mid X_{n+k-1} \ldots X_{n+1}) $
+        -->
 
-    <!--
-    $ \pi_X(n,k) = I(X_{n+k} ; X_n \mid \mathbf{X}_{n+k-1}^{(k-1)})$
-    -->
-    </div>
+        <!--
+        $ \pi_X(n,k) = I(X_{n+k} ; X_n \mid \mathbf{X}_{n+k-1}^{(k-1)})$
+        -->
+      </div>
     </p>
-    <!--
-
-    -->
+    
     <p>
-    <div id="output-paif"> </div>
+      <div id="output-paif"> </div>
     </p>
 
     <div id="plot"></div>
 
     <hr>
 
-    <h2>Do you use Python?</h2>
+    <h2>
+      Do you use Python?
+    </h2>
 
     <p>
-    If you want to include this analysis into a Python script, visit <a href="https://github.com/Frederic-vW/AIF-PAIF" target="_blank">Python implementation</a>
+      If you want to include this analysis into a Python script, visit <a href="https://github.com/Frederic-vW/AIF-PAIF" target="_blank">Python implementation</a>
     </p>
     
     <img style="float:right" src="img/S002R02_avgref_t0500-0800_graph.gif" alt="animated EEG grid"  width=180/>
 
     <p>
     The Python code has been used in these publications:<br>
+    
     [1] F. von Wegner, S. Bauer, F. Rosenow, J. Triesch, H. Laufs, “EEG microstate periodicity explained by rotating phase patterns 
       of resting-state alpha oscillations.”, NeuroImage, 224:117372, 2021. <br>
     [2] F. von Wegner, H. Laufs, “Information-theoretical analysis of EEG microstate sequences in Python.”, Front Neuroinform, 12:30, 2018.<br>
@@ -258,9 +291,7 @@
 
     <!-- FILE UPLOAD -->
     <script>
-    // src="loadData.js"
     let input = document.getElementById('file-input')
-    //let textarea = document.getElementById('inputText')
     let data_field = document.getElementById('input_data')
     // event listener triggered when a file is chosen. 
     input.addEventListener('change', () => { 
