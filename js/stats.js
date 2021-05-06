@@ -33,7 +33,7 @@ function parseInput(){
     document.getElementById("output-sequence-mapped").innerHTML = 
     "<strong>Mapped sequence: </strong>" + x.slice(0,30).join(', ') + "...";
     
-    plotData(x)
+    //plotData(x)
 }
 
 function log2(x) {
