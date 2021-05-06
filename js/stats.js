@@ -57,7 +57,7 @@ function analyze(){
     // autoinformation function (AIF)
     var lmax = 100;
     var mi = aif(x, ns, lmax);
-    plotAif(aif);
+    plotAif(mi);
     var mip = paif(x,ns,kmax);
     
     //var y = surrogate_mc(p_hat, T_hat, ns, x.length);
@@ -76,34 +76,34 @@ function analyze(){
     
     // write output:
     console.log(lmap);
-    document.getElementById("output-dist").innerHTML = 
-    "<strong>Distribution: </strong>" + 
+    document.getElementById("output-dist").innerHTML =  
     "p(" + S0.join(', ') + ") = " + 
     p_hat.map((p,i) => p_hat[i].toFixed(2)).join(', ');
+    // "<strong>Distribution: </strong>" +
     /*
     "<strong>Distribution: </strong>" + 
     p_hat.map((val,idx) => "\np(" + S0[idx] + ") = " + val.toFixed(2));
     */
     
-    document.getElementById("output-markov0").innerHTML = 
-    "<strong>Markov-0 test: </strong>" + txtMarkov0;
+    document.getElementById("output-markov0").innerHTML = txtMarkov0;
+    // "<strong>Markov-0 test: </strong>" + 	
     
-    document.getElementById("output-markov1").innerHTML = 
-    "<strong>Markov-1 test: </strong>" + txtMarkov1;
+    document.getElementById("output-markov1").innerHTML = txtMarkov1;
+    // "<strong>Markov-1 test: </strong>" + 
     
     document.getElementById("output-entropy").innerHTML = 
-    "Result: " + h0.toFixed(3) + " bits" + 
-    " (max. entropy: " + hmax.toFixed(3) + " bits)";
+    h0.toFixed(3) + " bits" + " (max. entropy: " + hmax.toFixed(3) + " bits)";
+    // "Result: " + 
     
     document.getElementById("output-entropy-rate").innerHTML = 
-    "Result for k = " + kmax + ": " + h1.toFixed(3) + " bits/sample";
+    "Finite entropy rate for k = " + kmax + ": " + h1.toFixed(3) + " bits/sample";
     
     document.getElementById("output-ais").innerHTML = 
-    "Result for k = 1..." + kmax + ": " +
+    "AIS for k = 1..." + kmax + ": " +
     h2.map(a => a.toFixed(3)).join(', ');
     
     document.getElementById("output-paif").innerHTML = 
-    "Result for k = 1..." + kmax + ": " +
+    "PAIF for k = 1..." + kmax + ": " +
     mip.map(a => a.toFixed(3)).join(', ');
 }
 
