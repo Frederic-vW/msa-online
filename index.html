@@ -21,7 +21,8 @@
       Statistical analysis of EEG microstate sequences
     </h1>
 
-    <!-- <div class="h2"></div> -->
+    <hr>
+    
     <h2>
       Data input
     </h2>
@@ -39,13 +40,15 @@
       </p>
 
       <div id="div_paste" style="display: inline-block;">
-        <button type="button" id="btn-paste" onclick=setInput(this)>
+        <button class="button" type="button" style="border-radius: 8px;" id="btn-paste" onclick=setInput(this)>
+        <!-- <button type="button" id="btn-paste" onclick=setInput(this)> -->
           Copy & paste
         </button>
       </div>
 
       <div id="div_upload" style="display: inline-block;">
-        <button type="button" id="btn-upload" onclick=setInput(this)>
+        <button class="button" type="button" style="border-radius: 8px;" id="btn-upload" onclick=setInput(this)>
+        <!-- <button type="button" id="btn-upload" onclick=setInput(this)> -->
           From file
         </button>
       </div>
@@ -64,22 +67,22 @@
         Upload your data from file: 
         <input type="file" id="file-input"> 
         <input hidden type=text id="input_data"> </input>
-        <!--
-        <textarea cols="30" rows="10" id="inputText"
-        placeholder="text will appear here"> 
-        </textarea> 
-        -->
       </div>
-    <!-- </div> -->
     </p>
+    
+    <hr>
+    
+    <h2>
+      Parse input
+    </h2>
 
     <div>
-      <button type="button" id="btn-parse" onclick="parseInput();">
-        Parse input
+      <button class="button" type="button" style="border-radius: 8px;" id="btn-parse" onclick="parseInput();">
+      <!-- <button type="button" id="btn-parse" onclick="parseInput();"> -->
+        Parse
       </button>
       <input hidden type="text" id="parsed_input">
     </div>
-    <!-- </div> -->
 
     <p>
       <div id="output-sequence-in">
@@ -109,36 +112,31 @@
       </div> 
     </p>
 
-    <!-- <div class="h2"></div> -->
-    <!-- <div class="output"><strong>Analysis</strong></div> -->
     <hr>
-    
-    <p>
-      <div>
-        <button class="button" type="button" id="btn-surrogate" onclick="make_surrogate();">
-          Make Markov surrogate
-        </button>
-        <!-- <input hidden type=> -->
-      </div>
-      If you hit this button, a first-order Markov surrogate will be analyzed, NOT the sequence you provided as input.
-    </p>
-    <div id="surrogate-notify" style="font: italic small-caps bold 24px/30px Arial, sans-serif; background-color: yellow; margin: auto;"></div>
-
-    <!-- <hr> -->
-
+     
+    <h2>
+      Analysis
+    </h2>
+  
     <p>
       <div>
         <button class="button" type="button" style="border-radius: 8px;" id="btn-analyze" onclick="analyze();">
           <span style="font-variant: small-caps;">Analyze!</span>
         </button>
-        <!-- <input hidden type=> -->
       </div>
     </p>
-
-    <!-- <center> </center> -->
-
-    <!-- <div id="plot"></div> -->
-
+    
+    <p>
+      <div>
+        <button class="button" type="button" style="border-radius: 8px;" id="btn-surrogate" onclick="make_surrogate();">
+          Make Markov surrogate
+        </button>
+      </div>
+      If you hit this button, a first-order Markov surrogate will be analyzed, NOT the sequence you provided as input.
+    </p>
+    <div id="surrogate-notify" style="font: italic small-caps bold 24px/30px Arial, sans-serif; 
+                                      background-color: yellow; margin: auto; max-width: 800px;"></div>
+    
     <!-- light gray: #D3D3D3 dark gray: #A9A9A9 charcoal: #36454F-->
     <p>
       <div class="output">
