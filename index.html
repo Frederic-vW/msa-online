@@ -82,6 +82,9 @@
     <div id="output-symbols-parsed"><strong>Parsed symbols: </strong></div> 
     </p>
     <p>
+    In case your symbols are not numeric, e.g. A, B, C, D, they will be mapped to integer values.
+    </p>
+    <p>
     <div id="output-symbols-mapped"><strong>Mapped symbols: </strong></div>
     </p>
     <p>
@@ -97,7 +100,9 @@
     <button class="button" type="button" id="btn-surrogate" onclick="make_surrogate();">Make Markov surrogate</button>
     <!-- <input hidden type=> -->
     </div>
+    If you hit this button, a first-order Markov surrogate will be analyzed, NOT the sequence you provided as input.
     </p>
+    <p><div id="surrogate-notify"></div></p>
 
     <!-- <hr> -->
 
@@ -214,7 +219,7 @@
 
     <hr>
 
-    <h2>Do you use Python ?</h2>
+    <h2>Do you use Python?</h2>
 
     <p>
     If you want to include this analysis into a Python script, visit <a href="https://github.com/Frederic-vW/AIF-PAIF" target="_blank">Python implementation</a>
