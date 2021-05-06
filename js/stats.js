@@ -442,9 +442,14 @@ function plotAif(z){
     var lags = [];
     try {
 	dt = 1000.0/parseFloat(sr)
+	if (!isNaN(dt)) {
+	    xlabel = "lag [ms]"
+	    lags = [...Array(z.length).keys()].map(function(x) { return x * dt; })
+	} else {
+	    xlabel = "lag [samples]"
+	    lags = [...Array(z.length).keys()]
+	}
 	console.log("dt: ", dt)
-	xlabel = "lag [ms]"
-	lags = [...Array(z.length).keys()].map(function(x) { return x * dt; })
 	console.log("lags: ", lags)
     } catch {
 	xlabel = "lag [samples]"
@@ -475,55 +480,55 @@ function LogGamma(Z) {
     var S = 1 + c1/Z + c2/(Z+1) + c3/(Z+2) + c4/(Z+3) + c5/(Z+4) + c6/(Z+5);
     var c7 = 2.50662827465;
     var LG = (Z-0.5)*Math.log(Z+4.5) - (Z+4.5) + Math.log(S*c7);
-	return LG
+    return LG
 }
 
 function Gcf(X,A) {
     // Good for X>A+1
     var A0 = 0;
-	var B0 = 1;
-	var A1 = 1;
-	var B1 = X;
-	var AOLD = 0;
-	var N = 0;
-	while (Math.abs((A1-AOLD)/A1) > 0.00001) {
-		AOLD = A1;
-		N = N+1;
-		A0 = A1 + (N-A)*A0;
-		B0 = B1 + (N-A)*B0;
-		A1 = X*A0 + N*A1;
-		B1 = X*B0 + N*B1;
-		A0 = A0/B1;
-		B0 = B0/B1;
-		A1 = A1/B1;
-		B1 = 1;
-	}
-	var Prob = Math.exp(A*Math.log(X)-X-LogGamma(A))*A1;
-	return 1-Prob
+    var B0 = 1;
+    var A1 = 1;
+    var B1 = X;
+    var AOLD = 0;
+    var N = 0;
+    while (Math.abs((A1-AOLD)/A1) > 0.00001) {
+	AOLD = A1;
+	N = N+1;
+	A0 = A1 + (N-A)*A0;
+	B0 = B1 + (N-A)*B0;
+	A1 = X*A0 + N*A1;
+	B1 = X*B0 + N*B1;
+	A0 = A0/B1;
+	B0 = B0/B1;
+	A1 = A1/B1;
+	B1 = 1;
+    }
+    var Prob = Math.exp(A*Math.log(X)-X-LogGamma(A))*A1;
+    return 1-Prob
 }
 
 function Gser(X,A) {
     // Good for X<A+1.
-	var T9 = 1/A;
-	var G = T9;
-	var I = 1;
-	while (T9 > G*0.00001) {
-		T9 = T9*X/(A+I);
-		G = G+T9;
-		I = I+1;
-	}
-	G=G*Math.exp(A*Math.log(X)-X-LogGamma(A));
+    var T9 = 1/A;
+    var G = T9;
+    var I = 1;
+    while (T9 > G*0.00001) {
+	T9 = T9*X/(A+I);
+	G = G+T9;
+	I = I+1;
+    }
+    G=G*Math.exp(A*Math.log(X)-X-LogGamma(A));
     return G
 }
 
 function Gammacdf(x,a) {
-	var GI;
-	if (x <= 0) {
-		GI = 0;
-	} else if (x < a+1) {
-		GI = Gser(x,a);
-	} else {
-		GI = Gcf(x,a);
-	}
-	return GI
+    var GI;
+    if (x <= 0) {
+	GI = 0;
+    } else if (x < a+1) {
+	GI = Gser(x,a);
+    } else {
+	GI = Gcf(x,a);
+    }
+    return GI
 }
