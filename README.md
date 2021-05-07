@@ -1,9 +1,10 @@
 # msa-online
 Online *microstate sequence analysis (msa)* in 3 steps:
 1. Data input
-  - copy & paste microstate sequence as text
-  - load microstate sequence from file
-3. Parse data: hopefully, the correct symbols (e.g. A, B, C, D) are found automatically  
+  * copy & paste microstate sequence as text
+  * load microstate sequence from file
+3. Parse data:  
+   Hopefully, the correct symbols (e.g. A, B, C, D) are found automatically.  
    Characters, Integers, Floats etc. should not be a problem
 5. Analyze
   - Distribution of symbols
