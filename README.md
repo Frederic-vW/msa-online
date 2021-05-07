@@ -3,19 +3,26 @@
 Online *microstate sequence analysis (msa)* in 3 steps:
 
 1. Data input
-  * copy & paste microstate sequence as text
-  * load microstate sequence from file
-3. Parse data:  
-   Hopefully, the correct symbols (e.g. A, B, C, D) are found automatically.  
-   Characters, Integers, Floats etc. should not be a problem
-5. Analyze
-  * Distribution of symbols
-  * Transition probability matrix
-  * Shannon entropy of the sequence
-  * Finite entropy rate
-  * Active information storage
-  * Partial autoinformation function
-  * Autoinformation function
+2. Parse data
+3. Analyze
+
+**Data input**  
+- copy & paste microstate sequence as text
+- load microstate sequence from file
+
+**Parse**  
+Microstate symbols will be found automatically, supported symbols are lower case letters (a-z), upper case letters (A-Z) and integers (0-9).  
+
+**Analyze**  
+* Distribution of symbols
+* Transition probability matrix
+* Zero-order Markov test
+* First-order Markov test
+* Shannon entropy of the sequence
+* Finite entropy rate
+* Active information storage
+* Partial autoinformation function
+* Autoinformation function
 
 These analyses were used in the publications:
 
