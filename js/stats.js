@@ -58,7 +58,11 @@ function analyze(){
     // active information storage (AIS)
     var h2 = ais(x,ns,kmax);
     // autoinformation function (AIF)
-    var lmax = 100;
+    //var lmax = 100;
+    var lmax_str = document.getElementById("aif-max-lag");
+    var lmax;
+    lmax = parseInt(lmax_str);
+    if (isNaN(lmax)) lmax = 100;
     var mi = aif(x, ns, lmax);
     //plotAif(mi);
     var mip = paif(x,ns,kmax);
