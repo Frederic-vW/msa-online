@@ -82,7 +82,6 @@ function analyze(){
     " (p=" + pval1.toFixed(4) + ")";
     
     // write output:
-    console.log(lmap);
     document.getElementById("output-dist").innerHTML =  
     "p(" + S0.join(', ') + ") = " + 
     p_hat.map((p,i) => p_hat[i].toFixed(2)).join(', ');
