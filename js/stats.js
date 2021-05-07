@@ -12,7 +12,7 @@ function parseInput(){
         var s = document.getElementById('input_data').value;
     } 
     //var raw = s.replace(/[^\d-]/g, '').trim(); // integers only
-    var raw = s.replace(/[^a-zA-z0-9]/g, '').trim(); // letters and integers
+    var raw = s.replace(/[^a-zA-Z0-9]/g, '').trim(); // letters and integers
     //S0 = [...new Set(raw)] // unique values of x
     S0 = Array.from(new Set(raw)); // unique values of x
     S1 = S0.map(a => S0.indexOf(a)); // map to 0,1,...
