@@ -59,10 +59,11 @@ function analyze(){
     var h2 = ais(x,ns,kmax);
     // autoinformation function (AIF)
     //var lmax = 100;
-    var lmax_str = document.getElementById("aif-max-lag");
+    var lmax_str = document.getElementById("aif-max-lag").value;
     var lmax;
     lmax = parseInt(lmax_str);
     if (isNaN(lmax)) lmax = 100;
+    document.getElementById("aif-max-lag").value = lmax;
     var mi = aif(x, ns, lmax);
     //plotAif(mi);
     var mip = paif(x,ns,kmax);
