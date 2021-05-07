@@ -41,6 +41,10 @@ function log2(x) {
 }
 
 function analyze(){
+    var k_str = document.getElementById("k-history").value;
+    var kmax = parseInt(k_str);
+    if (isNaN(kmax)) kmax = 7;
+    document.getElementById("k-history").value = kmax;
     // symbol distribution
     var p_hat = getP(x,ns)
     // transition matrix
@@ -50,7 +54,6 @@ function analyze(){
     var h0 = H_1(p_hat);
     var hmax = log2(ns);
     // entropy rate
-    var kmax = 7;
     var h1 = entropyRate(x,ns,kmax);
     // active information storage (AIS)
     var h2 = ais(x,ns,kmax);
