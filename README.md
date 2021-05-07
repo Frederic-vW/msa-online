@@ -1,5 +1,7 @@
 # msa-online
+
 Online *microstate sequence analysis (msa)* in 3 steps:
+
 1. Data input
   * copy & paste microstate sequence as text
   * load microstate sequence from file
