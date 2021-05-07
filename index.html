@@ -40,15 +40,13 @@
       </p>
 
       <div id="div_paste" style="display: inline-block;">
-        <button class="button" type="button" style="border-radius: 8px;" id="btn-paste" onclick=setInput(this)>
-        <!-- <button type="button" id="btn-paste" onclick=setInput(this)> -->
+        <button class="button" type="button" id="btn-paste" onclick=setInput(this)>
           Copy & paste
         </button>
       </div>
 
       <div id="div_upload" style="display: inline-block;">
-        <button class="button" type="button" style="border-radius: 8px;" id="btn-upload" onclick=setInput(this)>
-        <!-- <button type="button" id="btn-upload" onclick=setInput(this)> -->
+        <button class="button" type="button" id="btn-upload" onclick=setInput(this)>
           From file
         </button>
       </div>
@@ -83,8 +81,7 @@
     </h2>
 
     <div>
-      <button class="button" type="button" style="border-radius: 8px;" id="btn-parse" onclick="parseInput();">
-      <!-- <button type="button" id="btn-parse" onclick="parseInput();"> -->
+      <button class="button" type="button" id="btn-parse" onclick="parseInput();">
         Parse
       </button>
       <input hidden type="text" id="parsed_input">
@@ -126,7 +123,7 @@
   
     <p>
       <div>
-        <button class="button" type="button" style="border-radius: 8px;" id="btn-analyze" onclick="analyze();">
+        <button class="button" type="button" id="btn-analyze" onclick="analyze();">
           <span style="font-variant: small-caps;">Analyze!</span>
         </button>
       </div>
@@ -134,7 +131,7 @@
     
     <p>
       <div style="display: inline-block;">
-        <button class="button" type="button" style="border-radius: 8px;" id="btn-surrogate" onclick="make_surrogate();">
+        <button class="button" type="button" id="btn-surrogate" onclick="make_surrogate();">
           Make Markov surrogate
         </button>
       </div>
@@ -226,7 +223,7 @@
 
     <p>
       <div class="output">
-        <strong>Active information storage: </strong>
+        <strong>Active information storage (AIS): </strong>
         <!--
         $ a_X\left(n,k\right) = I\left(X_{n+1} ; \mathbf{X}_n^{(k)}\right) $
         $ a_X(n,k) = I(X_{n+1} ; \mathbf{X}_n^{(k)}) $
@@ -240,7 +237,7 @@
 
     <p>
       <div class="output">
-        <strong>Partial autoinformation function: </strong>
+        <strong>Partial autoinformation function (PAIF): </strong>
         <!--
         $$ \pi_X\left(n,k\right) = I\left(X_{n+k} ; X_n \mid X_{n+k-1} \ldots X_{n+1}\right) $$
         -->
@@ -257,6 +254,18 @@
     
     <p>
       <div id="output-paif"> </div>
+    </p>
+
+    <p>
+      <div class="output">
+        <strong>Autoinformation function (AIF): </strong>
+      </div>
+    </p>
+
+    <p>
+      <div style="display: inline-block;"> Max. AIF time lag: 
+        <input type="text" id="aif-max-lag" placeholder=" 100 "> samples. <br><br>
+      </div>
     </p>
 
     <div id="plot"></div>
