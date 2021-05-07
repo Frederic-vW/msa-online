@@ -9,13 +9,13 @@ Online *microstate sequence analysis (msa)* in 3 steps:
    Hopefully, the correct symbols (e.g. A, B, C, D) are found automatically.  
    Characters, Integers, Floats etc. should not be a problem
 5. Analyze
-  - Distribution of symbols
-  - Transition probability matrix
-  - Shannon entropy of the sequence
-  - Finite entropy rate
-  - Active information storage
-  - Partial autoinformation function
-  - Autoinformation function
+  * Distribution of symbols
+  * Transition probability matrix
+  * Shannon entropy of the sequence
+  * Finite entropy rate
+  * Active information storage
+  * Partial autoinformation function
+  * Autoinformation function
 
 These analyses were used in the publications:
 
