@@ -1,6 +1,6 @@
 # msa-online
 
-Online *microstate sequence analysis (msa)* in 3 steps:
+Online [*microstate sequence analysis (msa)*](https://frederic-vw.github.io/msa-online/) in 3 steps:  
 
 1. Data input
 2. Parse data
