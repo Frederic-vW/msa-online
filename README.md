@@ -1,5 +1,7 @@
 # msa-online
 
+[![DOI](https://zenodo.org/badge/359403677.svg)](https://zenodo.org/badge/latestdoi/359403677)
+
 Online [*microstate sequence analysis (msa)*](https://frederic-vw.github.io/msa-online/) in 3 steps:  
 
 1. Data input
